@@ -1,19 +1,15 @@
-name: Deploy
+name: "Update"
+description: "Update Article RSS"
+
 on:
   push:
-    branches: main
+    branches: [main]
   pull_request:
-    branches: main
+    branches: [main]
 
 jobs:
-  deploy:
-    name: Deploy
+  runs:
     runs-on: ubuntu-latest
-
-    permissions:
-      id-token: write # Needed for auth with Deno Deploy
-      contents: read # Needed to clone the repository
-
     steps:
       - name: Clone repository
         uses: actions/checkout@v3
@@ -23,9 +19,12 @@ jobs:
         with:
           deno-version: v2.x
 
-      - name: Upload to Deno Deploy
-        uses: denoland/deployctl@v1
-        with:
-          project: "https://github.com/23tas9/GithubActionTest.git"
-          entrypoint: "actions/update.ts"
-          root: "."
+      - name: Update step
+        run: "deno task start"
+
+#    - name: Upload to Deno Deploy
+#      uses: denoland/deployctl@v1
+#      with:
+#        project: "<your-project-name>"
+#        entrypoint: "main.ts"
+#        root: "."
