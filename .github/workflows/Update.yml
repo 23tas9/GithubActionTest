@@ -16,7 +16,7 @@ jobs:
 
       - run: |
           ls -la
-          pwa
+          pwd
 
       - name: Install Deno
         uses: denoland/setup-deno@v2
