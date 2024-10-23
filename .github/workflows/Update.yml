@@ -20,7 +20,7 @@ jobs:
           deno-version: v2.x
 
       - name: Update step
-        run: "deno task start"
+        run: "deno task update"
 
 #    - name: Upload to Deno Deploy
 #      uses: denoland/deployctl@v1
