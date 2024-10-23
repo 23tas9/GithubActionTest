@@ -26,6 +26,6 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "GithubActionTest"
+          project: "https://github.com/23tas9/GithubActionTest.git"
           entrypoint: "actions/update.ts"
           root: "."
