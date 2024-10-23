@@ -1,22 +1,9 @@
-name: test
-
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
 jobs:
-  test:
+  hello:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Deno
-        uses: ./
+      - uses: actions/checkout@master
+      - uses: denoland/setup-deno@v1
         with:
-          deno-version: v2.x
-
-      - name: Test Deno
-        run: deno run https://deno.land/std@0.198.0/examples/welcome.ts
+          deno-version: v1.x
+      - run: deno run https://deno.land/std/examples/welcome.ts
