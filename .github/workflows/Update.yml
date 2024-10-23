@@ -34,6 +34,7 @@ jobs:
           git status
 
           if (git diff --shortstat | grep '[0-9]'); then \
+            echo adding...
             git add .; \
             git commit -m "GitHub Actions から差分を Push"; \
             git push origin HEAD:${GITHUB_REF}; \
