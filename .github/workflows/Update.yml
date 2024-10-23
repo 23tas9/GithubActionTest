@@ -14,6 +14,10 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v3
 
+      - run: |
+          ls -la
+          pwa
+
       - name: Install Deno
         uses: denoland/setup-deno@v2
         with:
