@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
 
       - run: |
-          ls -la
+          ls
           pwd
 
       - name: Install Deno
