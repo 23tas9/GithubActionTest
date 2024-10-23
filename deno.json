@@ -1,5 +1,5 @@
 {
     "tasks": {
-        "update": "deno run -q -A ./action/update.ts"
+        "update": "deno run -q -A /action/update.ts"
     }
 }
