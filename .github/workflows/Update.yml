@@ -22,6 +22,13 @@ jobs:
       - name: Update step
         run: "deno task update"
 
+      - name: Push File
+        run: |
+          git add hello.txt
+          git status
+          git commit -m "[actions]: push files"
+          git push origin main
+
 #    - name: Upload to Deno Deploy
 #      uses: denoland/deployctl@v1
 #      with:
