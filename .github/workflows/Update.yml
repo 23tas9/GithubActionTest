@@ -28,10 +28,11 @@ jobs:
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
-          git add hello.txt
-          git status
-          git commit -m "[actions]: push files"
-          git push origin main
+          if (git diff --shortstat | grep '[0-9]'); then \
+            git add .; \
+            git commit -m "GitHub Actions から差分を Push"; \
+            git push origin HEAD:${GITHUB_REF}; \
+          fi
 
 #    - name: Upload to Deno Deploy
 #      uses: denoland/deployctl@v1
