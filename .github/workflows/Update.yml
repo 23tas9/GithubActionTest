@@ -8,6 +8,10 @@ on:
     branches: [main]
 
 jobs:
+  permissions:
+    actions: write
+    checks: write
+    contents: write
   runs:
     runs-on: ubuntu-latest
     steps:
@@ -21,9 +25,6 @@ jobs:
 
       - name: Update step
         run: "deno task update"
-
-      - name: check files
-        run: ls
 
       - name: Push File
         run: |
