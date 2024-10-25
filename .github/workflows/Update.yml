@@ -1,6 +1,11 @@
 name: "Update"
 description: "Update Article RSS"
 
+permissions:
+  actions: write
+  checks: write
+  contents: write
+
 on:
   push:
     branches: [main]
@@ -8,10 +13,6 @@ on:
     branches: [main]
 
 jobs:
-  permissions:
-    actions: write
-    checks: write
-    contents: write
   runs:
     runs-on: ubuntu-latest
     steps:
