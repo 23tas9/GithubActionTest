@@ -31,7 +31,7 @@ jobs:
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
-          if (git add --intent-to-add .; git diff --shortstat | grep '[0-9]'); then \
+          if (git add --intent-to-add .; git diff --shortstat | grep -0 '[0-9]'); then \
             echo adding... \
             git add .; \
             git commit -m "GitHub Actions から差分を Push"; \
